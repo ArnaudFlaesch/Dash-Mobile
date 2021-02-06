@@ -2,10 +2,9 @@ language: node_js
 
 node_js:
   - node
-  - 12
-  - 11
+  - 15
 
-install: npm ci
+install: yarn install --frozen-lockfile
 
 cache:
   directories:
@@ -15,9 +14,9 @@ env:
   - NODE_ENV=travis
 
 before_install:
-  - npm install -g typescript coveralls codacy-coverage
+  - yarn add global typescript coveralls codacy-coverage
 
-script: npm test -- --coverage
+script: yarn test -- --coverage
 
 after_success:
   - cat ./coverage/lcov.info | coveralls
