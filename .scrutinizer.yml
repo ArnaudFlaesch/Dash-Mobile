@@ -1,0 +1,29 @@
+checks:
+    javascript: true
+
+build:
+  environment:
+    node: v15.8.0
+  nodes:
+    analysis:
+      project_setup:
+        override: true
+    coverage:
+      tests:
+        before:
+          - 'yarn add global typescript'
+        override:
+           - js-scrutinizer-run
+           - command : 'yarn test -- --coverage'
+             coverage:
+              file: ./coverage/clover.xml
+              format: clover
+                  
+filter:
+    excluded_paths:
+        - "src/tests/"
+        # Everything in a root level "tests" directory will be excluded
+    dependency_paths:
+        - "lib/"
+        # Everything in a root level "lib" directory will be excluded from analysis
+        # but treated as a dependency
