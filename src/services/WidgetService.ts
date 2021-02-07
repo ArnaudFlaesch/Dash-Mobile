@@ -5,21 +5,21 @@ const headers = {
 };
 
 export function addWidget(type: WidgetTypes, tabId: number) {
-	return axios.post(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/widget/addWidget`, { "type": type, "tab": {"id": tabId} },
+	return axios.post(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/widget/addWidget`, { "type": type, "tab": {"id": tabId} },
 		{
 			headers
 		});
 }
 
 export function updateWidgetData(id: number, data: any) {
-	return axios.post(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/widget/updateWidgetData`, { "id": id, "data": data },
+	return axios.post(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/widget/updateWidgetData`, { "id": id, "data": data },
 		{
 			headers
 		});
 }
 
 export function deleteWidget(id: number) {
-	return axios.delete(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/widget/deleteWidget/?id=${id}`,
+	return axios.delete(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/widget/deleteWidget/?id=${id}`,
 		{
 			headers
 		});

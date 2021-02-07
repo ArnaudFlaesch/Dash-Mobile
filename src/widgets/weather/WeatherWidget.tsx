@@ -31,7 +31,7 @@ export default function WeatherWidget(props: IProps) {
 
 	function fetchDataFromWeatherApi() {
 		if (apiKey && cityToQuery) {
-			axios.get(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/proxy/`, {
+			axios.get(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/proxy/`, {
 				params: {
 					url: `${WEATHER_API}${WEATHER_ENDPOINT}${API_OPTIONS}${apiKey}&q=${cityToQuery}`
 				}
@@ -41,7 +41,7 @@ export default function WeatherWidget(props: IProps) {
 				})
 				.catch((error: Error) => {
 				});
-			axios.get(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/proxy/`, {
+			axios.get(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/proxy/`, {
 				params: {
 					url: `${WEATHER_API}${FORECAST_ENDPOINT}${API_OPTIONS}${apiKey}&q=${cityToQuery}`
 				}

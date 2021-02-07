@@ -4,12 +4,11 @@ import { useSelector } from 'react-redux';
 import { WidgetTypes } from '../enums/WidgetsEnum';
 import { ITabState } from '../reducers/tabReducer';
 import { deleteWidget } from '../services/WidgetService';
-import logger from '../utils/LogUtils';
 import { IWidgetConfig } from '../widgets/IWidgetConfig';
 import WeatherWidget from '../widgets/weather/WeatherWidget';
 
 interface IProps {
-    tabId: string;
+    tabId: number;
     newWidget: any;
 }
 
@@ -38,13 +37,13 @@ export default function TabDash(props: IProps) {
                 }
             })
             .catch((error: Error) => {
-                logger.error(error.message);
+                // logger.error(error.message);
             })
     }
 
     useEffect(() => {
-    /*    if (!widgets.length && activeTab === props.tabId) {
-            fetch(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/tab/}/widget/?tabId=${props.tabId}`)
+        if (!widgets.length && activeTab.toString() === props.tabId.toString()) {
+            fetch(`${process.env.REACT_APP_BACKEND_URL || "https://dash-webservices.herokuapp.com"}/widget/?tabId=${props.tabId}`)
                 .then((result) => {
                     return result.json();
                 })
@@ -52,9 +51,9 @@ export default function TabDash(props: IProps) {
                     setWidgets(result);
                 })
                 .catch((error: Error) => {
-                    logger.error(error.message);
+                    //logger.error(error.message);
                 });
-        }*/
+        }
     }, [activeTab])
 
     useEffect(() => {

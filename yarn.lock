@@ -2050,10 +2050,25 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
-"@types/react@*", "@types/react@^17.0.1":
+"@types/react-test-renderer@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-17.0.0.tgz#9be47b375eeb906fced37049e67284a438d56620"
+  integrity sha512-nvw+F81OmyzpyIE1S0xWpLonLUZCMewslPuA8BtjSKc5XEbn8zEQBXS7KuOLHTNnSOEM2Pum50gHOoZ62tqTRg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.1.tgz#eb1f1407dea8da3bc741879c1192aa703ab9975b"
   integrity sha512-w8t9f53B2ei4jeOqf/gxtc2Sswnc3LBK5s0DyJcg5xd10tMHXts2N31cKjWfH9IC/JvEPa/YF1U4YeP1t4R6HQ==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
+
+"@types/react@^16.13.1":
+  version "16.14.3"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.3.tgz#f5210f5deecf35d8794845549c93c2c3ad63aa9c"
+  integrity sha512-zPrXn03hmPYqh9DznqSFQsoRtrQ4aHgnZDO+hMGvsE/PORvDTdJCHQ6XvJV31ic+0LzF73huPFXUb++W6Kri0Q==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
