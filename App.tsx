@@ -1,27 +1,23 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Dash from './src/Dash';
-import { Provider } from 'react-redux';
-import store from './src/reducers/store';
-import { BrowserRouter } from 'react-router-dom';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import useCachedResources from './hooks/useCachedResources';
+import useColorScheme from './hooks/useColorScheme';
+import Navigation from './navigation';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Provider store={store}>
-        <BrowserRouter >
-          <Dash />
-        </BrowserRouter >
-      </Provider>
-    </View>
-  );
-}
+  const isLoadingComplete = useCachedResources();
+  const colorScheme = useColorScheme();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!isLoadingComplete) {
+    return null;
+  } else {
+    return (
+      <SafeAreaProvider>
+        <Navigation colorScheme={colorScheme} />
+        <StatusBar />
+      </SafeAreaProvider>
+    );
+  }
+}

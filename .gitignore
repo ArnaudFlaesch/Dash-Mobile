@@ -8,9 +8,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-web-report/
 
 # macOS
 .DS_Store
-dash-mobile.code-workspace
-android/
+android/res/
+android/.gradle/
+workspace.code-workspace
