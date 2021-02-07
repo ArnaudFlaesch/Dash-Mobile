@@ -8,7 +8,7 @@ import renderer, { act, create } from 'react-test-renderer';
 it('renders correctly', () => {
   let component;
   act(() => {
-    component = create(<Dash />)
+    component = create(<Provider store={store}><Dash /></Provider>)
   });
   expect(component).toBeTruthy();
 });
