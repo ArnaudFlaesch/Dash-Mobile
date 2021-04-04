@@ -6,8 +6,8 @@
         "android": "expo start --android",
         "ios": "expo start --ios",
         "web": "expo start --web",
-        "test": "jest",
-        "test-watch": "jest --watchAll",
+        "test": "jest --env=jsdom",
+        "test-watch": "jest --env=jsdom --watchAll",
         "bundle-android": "react-native bundle --dev false --platform android --entry-file App.tsx --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
         "generate-apk": "cd android && gradlew assembleRelease"
     },
