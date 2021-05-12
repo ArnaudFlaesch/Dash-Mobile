@@ -42,7 +42,7 @@
     },
     "devDependencies": {
         "@babel/core": "7.14.2",
-        "@types/node": "14.14.44",
+        "@types/node": "14.14.45",
         "@types/node-fetch": "2.5.10",
         "@types/react": "17.0.5",
         "@types/react-native": "0.64.5",
