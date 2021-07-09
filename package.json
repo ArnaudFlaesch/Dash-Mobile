@@ -50,7 +50,7 @@
         "@types/node-fetch": "2.5.11",
         "@types/react": "17.0.14",
         "@types/react-native": "0.64.11",
-        "@types/react-redux": "7.1.17",
+        "@types/react-redux": "7.1.18",
         "@types/react-test-renderer": "17.0.1",
         "jest-expo": "42.0.1",
         "react-test-renderer": "17.0.2",
